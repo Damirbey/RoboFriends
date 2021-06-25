@@ -17,11 +17,13 @@ export const searchRobots = (state=initialStateSearchField,action={})=>{
             return state;
     }
 }
+
 const initialStateRobots = {
     robots:[],
     isPending:true,
     error:''
 }
+
 export const getRobots = (state=initialStateRobots,action={})=>{
     switch(action.type)
     {

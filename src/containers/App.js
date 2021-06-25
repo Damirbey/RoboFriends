@@ -18,7 +18,7 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps = (dispatch)=>{
     return {
         onSearchChange : (event)=>dispatch(setSearchField(event.target.value)),
-        requestRobots:()=>dispatch(requestRobots())
+        requestRobots: ()=>dispatch(requestRobots())
     }
 }
 
@@ -29,10 +29,11 @@ function App(props){
     useEffect(()=>{
         requestRobots();
     },[requestRobots]);
-    
-        const filteredRobots = robots.filter((robot)=>{
-            return robot.name.toLowerCase().includes(searchField.toLowerCase());
+
+    const filteredRobots = robots.filter((robot)=>{
+        return robot.name.toLowerCase().includes(searchField.toLowerCase());
         })
+        
         return(
             <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
